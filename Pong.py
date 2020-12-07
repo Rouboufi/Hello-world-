@@ -38,8 +38,8 @@ balle.shape("square")
 balle.color("green")
 balle.penup()
 balle.goto(0, 0)
-balle.dx = 2
-balle.dy = 2
+balle.dx = 0.70
+balle.dy = 0.70
 
 # Pen
 pen = turtle.Turtle()
@@ -56,6 +56,7 @@ def raquette_1_up():
     y = raquette_1.ycor()
     y += 20
     raquette_1.sety(y)
+    
 
 def raquette_1_down():
     y = raquette_1.ycor()
@@ -68,6 +69,7 @@ def raquette_2_up():
     y = raquette_2.ycor()
     y += 20
     raquette_2.sety(y)
+
 
 def raquette_2_down():
     y = raquette_2.ycor()
@@ -142,8 +144,21 @@ while True:
         balle.setx(-340)
         balle.dx *= -1 
    
+      # Collision entre bordure haut et raquette_2
+    if raquette_2.ycor() > 255 :
+        raquette_2.sety(max(0, 255))
 
+      # Collision entre bordure bas et raquette_2
+    if raquette_2.ycor() < -255 :
+        raquette_2.sety(min(0, -255))    
 
+      # Collision entre bordure haut et raquette_1
+    if raquette_1.ycor() > 255 :
+        raquette_1.sety(max(0, 255))
+
+      # Collision entre bordure bas et raquette_1
+    if raquette_1.ycor() < -255 :
+        raquette_1.sety(min(0, -255))           
 
 
 
