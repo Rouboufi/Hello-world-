@@ -1,2 +1,1 @@
-# Hello-world-
-Easy software
+This is my first project
